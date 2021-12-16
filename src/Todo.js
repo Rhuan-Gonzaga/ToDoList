@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Todo.css";
+import Lista from "./Lista";
 
 function Todo(){
 
@@ -32,10 +33,7 @@ function Todo(){
                 <button onClick={novaTarefa}>ADD</button>
             </form>
 
-            <ul>
-                {/*Criando uma lista de tarefas*/}
-                {tarefasAtual.map(tarefa => <li>{tarefa}</li>)}
-            </ul>
+            <Lista tarefasAtual={tarefasAtual}></Lista>
         </div>
        
     )
