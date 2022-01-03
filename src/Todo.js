@@ -14,12 +14,17 @@ function Todo(){
       setTarefasAtual([...tarefasAtual,item]);
     }
 
+    function deletado(item){
+        let filtrar = tarefasAtual.filter(it=>it.id != item.id);
+        setTarefasAtual(filtrar);
+    }
+
     return(
         <div className="container">
             <h1>Teste</h1>
             <Formulario addItem={addItem}></Formulario>
 
-            <Lista tarefasAtual={tarefasAtual}></Lista>
+            <Lista deletado={deletado} tarefasAtual={tarefasAtual}></Lista>
         </div>
        
     )
