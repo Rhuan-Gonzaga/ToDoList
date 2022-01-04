@@ -19,12 +19,23 @@ function Todo(){
         setTarefasAtual(filtrar);
     }
 
+    function feitoClicado(item){
+        let atualizar = tarefasAtual.map(it=>{
+            if(it.id === item.id){
+                it.feito = !it.feito;
+            }
+            return it;
+        })
+        setTarefasAtual(atualizar);
+    }  
+    
+
     return(
         <div className="container">
             <h1>Teste</h1>
             <Formulario addItem={addItem}></Formulario>
 
-            <Lista deletado={deletado} tarefasAtual={tarefasAtual}></Lista>
+            <Lista feitoClicado={feitoClicado} deletado={deletado} tarefasAtual={tarefasAtual}></Lista>
         </div>
        
     )

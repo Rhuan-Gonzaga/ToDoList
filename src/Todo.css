@@ -2,3 +2,12 @@
     margin: auto;
     max-width: 900px;
 }
+
+.feito{
+    text-decoration: line-through;
+}
+
+img{
+    height: 30px;
+    width: 30px;   
+}
