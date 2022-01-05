@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Todo.css";
-import Item from "./item";
-import Lista from "./Lista";
-import Formulario from "./Formulario";
+import Item from "./componentes/item";
+import Lista from "./componentes/Lista";
+import Formulario from "./componentes/Formulario";
 
 function Todo(){
     
