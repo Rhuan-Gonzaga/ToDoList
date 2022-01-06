@@ -16,8 +16,8 @@ function ListaItem(props){
     return(
       
         
-            <li key={props.tarefa.id}>
-                <Cartao className={props.tarefa.feito ? "feito item" : "item"}>
+            <li>
+                <Cartao className={props.tarefa.feito ? "item" : "item"}>
                     {props.tarefa.texto}
                     <div>
                         <button onClick={()=>{props.feitoClicado(props.tarefa)}}><FeitoImg feito={props.tarefa.feito}></FeitoImg></button>
