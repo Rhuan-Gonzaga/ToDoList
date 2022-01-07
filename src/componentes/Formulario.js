@@ -24,9 +24,11 @@ function Formulario(props){
     }
 
     return(
-        <form>
-            <input onChange={tarefas}type="text" value={texto}></input>
-            <button onClick={novaTarefa}>ADD</button>
+        <form > 
+         
+                <input onChange={tarefas}type="text" value={texto}></input>
+                <button onClick={novaTarefa}>ADD</button>
+          
         </form>
     )
 }

@@ -3,11 +3,14 @@ import "./Todo.css";
 import Item from "./componentes/item";
 import Lista from "./componentes/Lista";
 import Formulario from "./componentes/Formulario";
+import Modal from "./componentes/Modal";
 
 const ITEM_SALVO = "Itemsalvo";
 
 function Todo(){
     
+    const [mostrarModal, setMostrarModal] = useState(false);
+
     //Tarefas Adicionadas
     const [tarefasAtual, setTarefasAtual] = useState([]);
     
@@ -43,12 +46,20 @@ function Todo(){
     }  
     
 
+    function onHideModal(e){
+        let target = e.target;
+        if(target.id == "modal"){
+            setMostrarModal(false)
+        }
+        console.log(target)
+    }
+
     return(
         <div className="container">
-            <h1>To-do List</h1>
-            <Formulario addItem={addItem}></Formulario>
-
+           <header className="header"><h1>To-do List</h1><button className="addButton" onClick={()=>{setMostrarModal(true)}}>+</button></header> 
+          
             <Lista feitoClicado={feitoClicado} deletado={deletado} tarefasAtual={tarefasAtual}></Lista>
+            <Modal mostrar={mostrarModal} onHideModal={onHideModal}> <Formulario addItem={addItem}></Formulario></Modal>
         </div>
        
     )
